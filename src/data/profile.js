@@ -1,6 +1,8 @@
 /**
  * PROFILE — all personal content lives here.
  */
+import { asset } from "../lib/asset";
+
 export const profile = {
   name: "Sajjad Ahmed",
   role: "Software Engineer",
@@ -18,7 +20,7 @@ export const profile = {
   based: "Karachi, PKT (UTC+5)",
 
   portrait: {
-    src: "/portrait.svg",
+    src: asset("portrait.svg"),
     alt: "Portrait of Sajjad Ahmed",
     caption: "Karachi · 2026",
   },

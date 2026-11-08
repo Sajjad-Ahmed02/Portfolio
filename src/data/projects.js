@@ -4,6 +4,8 @@
  * screenshots (1200×900 works best) and update `alt` accordingly.
  * `links` is an ordered list of { label, url }.
  */
+import { asset } from "../lib/asset";
+
 export const projects = [
   {
     id: "crowdfunding",
@@ -14,7 +16,7 @@ export const projects = [
     outcome: "JWT auth and role-based access control across three roles; containerized and deployed on Railway.",
     stack: ["Flask", "PostgreSQL", "React", "Docker", "RAG"],
     links: [{ label: "GitHub", url: "https://github.com/Sajjad-Ahmed02" }],
-    image: "/work/crowdfunding.svg",
+    image: asset("work/crowdfunding.svg"),
     alt: "Line drawing of a segmented funding bar with a dashed goal marker",
   },
   {
@@ -29,7 +31,7 @@ export const projects = [
       { label: "Live site", url: "https://www.socialtribe100.com" },
       { label: "GitHub", url: "https://github.com/Sajjad-Ahmed02" },
     ],
-    image: "/work/socialtribe.svg",
+    image: asset("work/socialtribe.svg"),
     alt: "Network of connected circles, one highlighted in vermilion",
   },
   {
@@ -41,7 +43,7 @@ export const projects = [
     outcome: "Cut manual review time by an estimated 70% on repositories with 10+ source files.",
     stack: ["Python", "Gemini API", "LLM"],
     links: [{ label: "GitHub", url: "https://github.com/Sajjad-Ahmed02" }],
-    image: "/work/codereview.svg",
+    image: asset("work/codereview.svg"),
     alt: "Code panel with a highlighted line and an attached review note",
   },
 ];
