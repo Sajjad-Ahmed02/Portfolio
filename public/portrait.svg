@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1125">
+  <defs>
+    <pattern id="grid" width="90" height="90" patternUnits="userSpaceOnUse">
+      <path d="M90 0H0V90" fill="none" stroke="#ddd6c8" stroke-width="1" />
+    </pattern>
+  </defs>
+  <rect width="900" height="1125" fill="#efeae0" />
+  <rect width="900" height="1125" fill="url(#grid)" />
+
+  <text
+    x="450"
+    y="660"
+    text-anchor="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-style="italic"
+    font-size="480"
+    fill="#1b1916"
+  >S</text>
+  <circle cx="640" cy="640" r="16" fill="#a8431f" />
+
+  <line x1="240" y1="960" x2="660" y2="960" stroke="#c6bda9" stroke-width="2" />
+  <line x1="240" y1="960" x2="330" y2="960" stroke="#a8431f" stroke-width="4" />
+</svg>

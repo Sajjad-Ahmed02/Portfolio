@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Newsreader", Georgia, "Times New Roman", serif;
+
+  /* palette — warm paper and ink */
+  --color-paper: #f5f1e8;
+  --color-paper2: #efeae0;
+  --color-ink: #1b1916;
+  --color-muted: #5f5b52;
+  --color-accent: #a8431f;
+  --color-quiet: #746a5a;
+  --color-line: #ddd6c8;
+  --color-line2: #c6bda9;
+}
+
+/* ---------- base ---------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-paper font-sans text-ink antialiased;
+  line-height: 1.7;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* focus rings need to be light on the ink masthead */
+.nav-dark :focus-visible {
+  outline-color: var(--color-paper);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-paper);
+}
+::-webkit-scrollbar-thumb {
+  background: #cfc7b8;
+  border: 3px solid var(--color-paper);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b9af9d;
+}
+
+/* ---------- links ---------- */
+
+/* underline draws in from the left on hover/focus */
+.u-link {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1px;
+  padding-bottom: 2px;
+  transition: background-size 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.u-link:hover,
+.u-link:focus-visible {
+  background-size: 100% 1px;
+}
+
+/* ---------- scroll reveal ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- project media ---------- */
+
+.media-lift,
+.media-zoom {
+  transition:
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease;
+}
+.group:hover .media-lift {
+  transform: translateY(-4px);
+}
+.group:hover .media-zoom {
+  transform: scale(1.03);
+}
+
+/* ---------- reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .u-link {
+    transition: none;
+  }
+  .media-lift,
+  .media-zoom {
+    transition: none;
+  }
+  .group:hover .media-lift,
+  .group:hover .media-zoom {
+    transform: none;
+  }
+}
